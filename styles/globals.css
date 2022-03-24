@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  font-size: 1.17vw;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.rainbow-font {
+  background-image: linear-gradient(90deg, #ADFF00, #00FFF0, #8378FF, #DB00FF, #FF008A);
+  background-clip: text;
+  color: transparent;
+}
+
+.timeline {
+  position: relative;
+  max-width: 78em;
+  margin: 0 auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.container {
+  padding: 0.93em 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  width: 2.3em;
+  height: 2.3em;
+  right: -1.0em;
+  background-color: white;
+  border: 0.6em solid #121328;
+  top: 1em;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.right::after {
+  left: -1.3em;
+}
+
+.content {
+  margin-top: -0.3em;
+  position: relative;
+}
+
+.left {
+  left: 0;
+  text-align: right;
+}
+
+.right {
+  left: 50%;
+  text-align: left;
+}
+
+.content .title, .date {
+  color: white;
+  font-weight: bold;
+}
+
+.content .date {
+  font-size: 2.0em;
+}
+
+.content .title {
+  font-size: 1.5em;
+}
+
+.content .text {
+  color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .timeline::after {
+    left: 2.5rem;
+  }
+  
+  .container {
+    width: 100%;
+    padding-left: 6rem;
+    padding-right: 2rem;
+    margin: 1.5rem 0;
+  }
+  
+  .left, .right {
+    text-align: left;
+  }
+
+  .left::after, .right::after {
+    left: 1.15rem;
+  }
+  
+  .right {
+    left: 0%;
+  }
+
+  .content .text {
+    font-size: 1.5rem;
+  }
+
+  .content .title {
+    font-size: 1.875rem;
+  }
+}
+/*************** Timeline End *********************/
+
+
+.button-scale-x {
+  transition: all .3s ease-in;
+}
+
+.card-scale, .card-up {
+  transition: all .3s ease-in-out;
+}
+
+.card-scale:hover {
+  transform: scale(1.02);
+}
+
+.card-up:hover {
+  transform: translateY(-0.5em);
+}
+
+.navbar-item {
+  transition: color .2s ease-in;
+}
+
+.navbar-item:hover {
+  color: #0082f3;
+}
+
+.sidenav {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #211F23;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 7rem;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 2rem;
+  font-size: 4rem;
+  margin-left: 3.1rem;
+}
+
+.intro-background {
+  background-image: url('/images/desktop/background_home.png');
+}
+
+@media screen and (max-width: 768px) {
+  html,
+  body {
+    font-size: 2.078vw;
+  }
+
+  .intro-background {
+    background-image: url('/images/mobile/background_home.png');
+  }
+}
